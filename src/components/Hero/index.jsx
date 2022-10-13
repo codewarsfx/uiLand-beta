@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
-import Header from "../Header/headerComponent";
-import HeroText from "../HeroText/herotextComponent";
-
+import Header from "../Header";
+import HeroImgBig from "../HeroImgBig";
+import HeroImgSmall from "../HeroImgSmall";
+import HeroText from "../HeroText";
 
 const Hero = () => {
 	return (
 		<HeroContainer>
-            <Header />
-            <HeroText />
+			<Header />
+			<HeroText />
+			<HeroImgBig />
+			<HeroImgSmall />
 		</HeroContainer>
 	);
 };
