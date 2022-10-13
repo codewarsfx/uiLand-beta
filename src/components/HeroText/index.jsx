@@ -4,15 +4,17 @@ import { Button } from "../uiElements";
 import { buttonTypes } from "../uiElements/button";
 
 const HeroText = () => {
-return(	<HeroTextContainer>
-		<HeroTextTagLine>
-			Get inspired by UI designs from world class Apps
-		</HeroTextTagLine>
-		<HeroTextSecondary>
-			Save hours of UI & UX research with our library of mobile screenshots
-		</HeroTextSecondary>
-		<Button type={buttonTypes.primary}>Try it free</Button>
-	</HeroTextContainer>)
+	return (
+		<HeroTextContainer>
+			<HeroTextTagLine>
+				Get inspired by UI designs from world class Apps
+			</HeroTextTagLine>
+			<HeroTextSecondary>
+				Save hours of UI & UX research with our library of mobile screenshots
+			</HeroTextSecondary>
+			<Button type={buttonTypes.primary}>Try it free</Button>
+		</HeroTextContainer>
+	);
 };
 
 const HeroTextContainer = styled.main`

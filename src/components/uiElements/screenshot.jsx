@@ -8,6 +8,8 @@ const Screenshot = () => {
 	);
 };
 
+
+
 const ScreenshotContainer = styled.div`
 	width: 48%;
 	border-radius: 0.8em;

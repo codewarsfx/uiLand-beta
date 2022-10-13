@@ -3,7 +3,7 @@ import styled from "styled-components";
 const HeroImgSmall = () => {
 	return (
 		<HeroImgSmallContainer>
-			<img src='/assets/img/backgroundsmall.png' alt='hero-img' />
+			<img src='/assets/img/small.svg' alt='hero-img' />
 		</HeroImgSmallContainer>
 	);
 };

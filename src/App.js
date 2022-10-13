@@ -1,15 +1,19 @@
 import { createGlobalStyle } from "styled-components";
-import { Routes,Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
-
+import Elements from "./components/ElementsTab";
+import ScreensTab from "./components/ScreensTab";
 
 function App() {
 	return (
 		<div className='App'>
-      <GlobalStyle />
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-      </Routes>
+			<GlobalStyle />
+			<Routes>
+				<Route path='/' element={<Home />}>
+          <Route index element={<ScreensTab />} />
+          <Route  path='elements' element={<Elements/>}/>
+				</Route>
+			</Routes>
 		</div>
 	);
 }
@@ -48,6 +52,11 @@ p,h1,h2,h3,h4,h5,h6{
 a{
     text-decoration: none;
     color: inherit;
+
+}
+.pills{
+  padding:0.4em 0.9em;
+  border-radius: 5em;
 }
 
 img{
@@ -57,9 +66,8 @@ img{
 
 
 
- /* *{
-  border: 1px solid red;
- } */
+
+
 
 `;
 
