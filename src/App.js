@@ -1,10 +1,15 @@
 import { createGlobalStyle } from "styled-components";
-import "normalize.css";
+import { Routes,Route } from "react-router-dom";
+import Home from "./pages/home";
+
 
 function App() {
 	return (
 		<div className='App'>
-			<GlobalStyle />
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+      </Routes>
 		</div>
 	);
 }
