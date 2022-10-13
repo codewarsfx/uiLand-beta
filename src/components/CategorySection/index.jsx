@@ -17,8 +17,19 @@ const ScreensInCategory = () => {
 						<Screenshot />
 						<Screenshot />
 					</ScreenshotContainerBottom>
+                </ScreenShotContainer>
+                <ScreenShotContainer>
+					<ScreenshotContainerTop>
+						<BrandLogo imageUrl='/assets/img/cowrywise.png' />
+						<BrandDescription name='Cowrywise' category='FINTECH' />
+						<Pill type={pillsTypes.screenshot}>FINTECH</Pill>
+					</ScreenshotContainerTop>
+					<ScreenshotContainerBottom>
+						<Screenshot />
+						<Screenshot />
+					</ScreenshotContainerBottom>
 				</ScreenShotContainer>
-			</CategorySectionWrapper>
+            </CategorySectionWrapper>
 		</CategorySectionContainer>
 	);
 };

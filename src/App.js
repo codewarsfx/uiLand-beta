@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 import { Routes, Route } from "react-router-dom";
+
+
 import Home from "./pages/home";
-import Elements from "./components/ElementsTab";
 import ScreensTab from "./components/ScreensTab";
+import ElementsTab from "./components/ElementsTab";
 
 function App() {
 	return (
@@ -11,7 +13,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<Home />}>
           <Route index element={<ScreensTab />} />
-          <Route  path='elements' element={<Elements/>}/>
+          <Route  path='elements' element={<ElementsTab/>}/>
 				</Route>
 			</Routes>
 		</div>
@@ -62,9 +64,11 @@ a{
 img{
     display: inline-block;
 }
-
-
-
+/* 
+*{
+  border: 1px solid red;
+}
+ */
 
 
 

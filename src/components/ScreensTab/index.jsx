@@ -1,5 +1,5 @@
 import ScreensInCategory from "../CategorySection";
-import CategoryTab from "../CategoryTab";
+import CategoryTab from "../CategoryTabBar";
 
 const ScreensTab = () => {
 	return (

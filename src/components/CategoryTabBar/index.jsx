@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Pill } from "../uiElements";
 import { pillsTypes } from "../uiElements/pills";
 
-const CategoryTab = () => {
+const CategoryTabBar = () => {
 	// const categories = [];
 
 	return (
@@ -55,4 +55,4 @@ const CategoryTabWrapper = styled.div`
 	}
 `;
 
-export default CategoryTab;
+export default CategoryTabBar;

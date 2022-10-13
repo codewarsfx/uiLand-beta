@@ -1,14 +1,14 @@
-import CategoryTab from "../CategoryTab";
+import CategoryTabBar from "../CategoryTabBar";
 // import ScreensInCategory from "../CategorySection"
 import ElementsInCategory from "../ElementsInCategory";
 
-const Elements = () => {
+const ElementsTab = () => {
 	return (
 		<>
-			<CategoryTab />
+			<CategoryTabBar/>
 			<ElementsInCategory />
 		</>
 	);
 };
 
-export default Elements;
+export default ElementsTab;
