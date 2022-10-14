@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const ElementsInCategory = () => {
 	return (
-		<ElementsInCategoryContainer>
-			<Screenshot />
-			<Screenshot />
-			<Screenshot />
-			<Screenshot />
+		<ElementsInCategoryContainer >
+			<Screenshot initial={{opacity:0}} animate={{opacity:1}}/>
+			<Screenshot initial={{opacity:0}} animate={{opacity:1}} />
+			<Screenshot initial={{opacity:0}} animate={{opacity:1}}/>
+			<Screenshot initial={{opacity:0}} animate={{opacity:1}}/>
 		</ElementsInCategoryContainer>
 	);
 };
@@ -25,7 +26,7 @@ const ElementsInCategoryContainer = styled.div`
 	}
 `;
 
-const Screenshot = styled.div`
+const Screenshot = styled(motion.div)`
 	border-radius: 0.8em;
 	height: 40vh;
 	background-color: var(--light-grey-color);

@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Screenshot = () => {
 	return (
 		<>
-			<ScreenshotContainer />
+			<ScreenshotContainer initial={{opacity:0}} animate={{opacity:1}} />
 		</>
 	);
 };
 
 
 
-const ScreenshotContainer = styled.div`
+const ScreenshotContainer = styled(motion.div)`
 	width: 48%;
 	border-radius: 0.8em;
 	height: 40vh;

@@ -64,13 +64,19 @@ a{
 img{
     display: inline-block;
 }
-/* 
 *{
+   -webkit-tap-highlight-color: transparent !important;
+ }
+
+/* 
+ *{
   border: 1px solid red;
+} */
+
+
+.remove-scroll{
+  overflow: hidden;
 }
- */
-
-
 
 
 `;

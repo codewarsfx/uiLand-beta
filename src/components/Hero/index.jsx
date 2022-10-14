@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import Header from "../Header";
 import HeroImgBig from "../HeroImgBig";
@@ -16,7 +17,7 @@ const Hero = () => {
 	);
 };
 
-const HeroContainer = styled.div`
+const HeroContainer = styled(motion.div)`
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--primary-color);
