@@ -14,7 +14,7 @@ import Modal from "../modal";
 const Header = () => {
 	const { isModalopen, toggleModal } = useModal();
 
-	//animations states =
+	//animations states 
 	const initialState = { y: -100 };
 	const animateTo = {
 		y: 0,
@@ -31,13 +31,13 @@ const Header = () => {
 			<div>
 				<img src='/assets/img/UL.png' alt='' />
 			</div>
-			<HeaderCTA onClick={()=>toggleModal()}>
+			<HeaderCTA onClick={() => toggleModal()}>
 				<Button type={buttonTypes.login}>Login</Button>
 				<Harmburger />
 			</HeaderCTA>
 			{isModalopen && (
 				<Modal toggleModal={toggleModal}>
-					<Login />
+					<Login toggleModal={toggleModal} />
 				</Modal>
 			)}
 		</HeaderContainer>
