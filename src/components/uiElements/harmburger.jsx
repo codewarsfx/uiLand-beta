@@ -11,6 +11,7 @@ const Harmburger = () => {
 };
 
 const HarmburgerContainer = styled.div`
+cursor: pointer;
 	@media (min-width: 768px) {
 		display: none;
 	}

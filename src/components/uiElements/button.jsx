@@ -4,6 +4,7 @@ export const buttonTypes = {
 	base: "base",
 	primary: "primary",
 	login: "login",
+	google: "google",
 };
 
 const getButton = (buttonType) => {
@@ -11,6 +12,7 @@ const getButton = (buttonType) => {
 		[buttonTypes.base]: BaseButton,
 		[buttonTypes.primary]: PrimaryButton,
 		[buttonTypes.login]: LoginButton,
+		[buttonTypes.google]: GoogleButton,
 	}[buttonType];
 };
 
@@ -53,6 +55,13 @@ const LoginButton = styled(PrimaryButton)`
 	@media (min-width: 768px) {
 		display: block;
 	}
+`;
+
+const GoogleButton = styled(PrimaryButton)`
+	color: var(--text-color-light);
+	background-color: var(--primary-color);
+	padding-top: 1em;
+	padding-bottom:1em;
 `;
 
 export default Button;

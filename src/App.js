@@ -1,19 +1,27 @@
 import { createGlobalStyle } from "styled-components";
 import { Routes, Route } from "react-router-dom";
 
-
 import Home from "./pages/home";
 import ScreensTab from "./components/ScreensTab";
 import ElementsTab from "./components/ElementsTab";
+import { UserContextProvider } from "./context/authContext";
 
 function App() {
 	return (
 		<div className='App'>
 			<GlobalStyle />
+
 			<Routes>
-				<Route path='/' element={<Home />}>
-          <Route index element={<ScreensTab />} />
-          <Route  path='elements' element={<ElementsTab/>}/>
+				<Route
+					path='/'
+					element={
+						<UserContextProvider>
+							<Home />
+						</UserContextProvider>
+					}
+				>
+					<Route index element={<ScreensTab />} />
+					<Route path='elements' element={<ElementsTab />} />
 				</Route>
 			</Routes>
 		</div>
@@ -64,13 +72,19 @@ a{
 img{
     display: inline-block;
 }
-/* 
 *{
+   -webkit-tap-highlight-color: transparent !important;
+ }
+
+/* 
+ *{
   border: 1px solid red;
+} */
+
+
+.remove-scroll{
+  overflow: hidden;
 }
- */
-
-
 
 
 `;

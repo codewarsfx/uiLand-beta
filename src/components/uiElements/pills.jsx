@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+
 
 export const pillsTypes = {
 	base: "base",
@@ -26,7 +26,7 @@ const Pill = ({ type, children, ...otherProps }) => {
 };
 
 //base pill style
-const BasePill = styled(NavLink)`
+const BasePill = styled.span`
 	display: flex;
 	align-items: center;
 	justify-content: center;
