@@ -1,35 +1,31 @@
+import { useContext } from "react";
 import styled from "styled-components";
 
+import { ScreensContext } from "../../context/screensContex";
 import { BrandDescription, BrandLogo, Pill, Screenshot } from "../uiElements";
 import { pillsTypes } from "../uiElements/pills";
 
 const ScreensInCategory = () => {
+	const screens = useContext(ScreensContext);
+
 	return (
 		<CategorySectionContainer>
 			<CategorySectionWrapper>
-				<ScreenShotContainer>
-					<ScreenshotContainerTop>
-						<BrandLogo imageUrl='/assets/img/cowrywise.png' />
-						<BrandDescription name='Cowrywise' category='FINTECH' />
-						<Pill type={pillsTypes.screenshot}>FINTECH</Pill>
-					</ScreenshotContainerTop>
-					<ScreenshotContainerBottom>
-						<Screenshot />
-						<Screenshot />
-					</ScreenshotContainerBottom>
-                </ScreenShotContainer>
-                <ScreenShotContainer>
-					<ScreenshotContainerTop>
-						<BrandLogo imageUrl='/assets/img/cowrywise.png' />
-						<BrandDescription name='Cowrywise' category='FINTECH' />
-						<Pill type={pillsTypes.screenshot}>FINTECH</Pill>
-					</ScreenshotContainerTop>
-					<ScreenshotContainerBottom>
-						<Screenshot />
-						<Screenshot />
-					</ScreenshotContainerBottom>
-				</ScreenShotContainer>
-            </CategorySectionWrapper>
+				{screens?.map(({ startScreens, Name, Category, logo, id }) => (
+					<ScreenShotContainer key={id}>
+						<ScreenshotContainerTop>
+							<BrandLogo imageUrl={logo} />
+							<BrandDescription name={Name} category={Category} />
+							<Pill type={pillsTypes.screenshot}>view</Pill>
+						</ScreenshotContainerTop>
+						<ScreenshotContainerBottom>
+							{startScreens.map((screenshot) => (
+								<Screenshot key={screenshot} imgLink={screenshot} alt={Name} />
+							))}
+						</ScreenshotContainerBottom>
+					</ScreenShotContainer>
+				))}
+			</CategorySectionWrapper>
 		</CategorySectionContainer>
 	);
 };
