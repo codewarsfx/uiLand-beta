@@ -9,7 +9,10 @@ export const UserContextProvider = ({ children }) => {
 
 	const subscribeToAuthOnMount = () => {
 		onAuthStateChanged(auth, (newUser) => {
-			console.log(newUser);
+            if (newUser) {
+                return setUser(newUser)
+            }
+            return setUser(null)
 		});
 
 		return subscribeToAuthOnMount;

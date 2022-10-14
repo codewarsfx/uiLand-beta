@@ -10,11 +10,16 @@ import {
 import useModal from "../../hooks/useModal";
 import Login from "../Login/login";
 import Modal from "../modal";
+import { useContext } from "react";
+import { UserContext } from "../../context/authContext";
+import { signout } from "../../firebase";
 
 const Header = () => {
 	const { isModalopen, toggleModal } = useModal();
+	const user = useContext(UserContext);
 
-	//animations states 
+	
+	//animations states
 	const initialState = { y: -100 };
 	const animateTo = {
 		y: 0,
@@ -31,9 +36,17 @@ const Header = () => {
 			<div>
 				<img src='/assets/img/UL.png' alt='' />
 			</div>
-			<HeaderCTA onClick={() => toggleModal()}>
-				<Button type={buttonTypes.login}>Login</Button>
-				<Harmburger />
+			<HeaderCTA>
+				{!user ? (
+					<div onClick={() => toggleModal()}>
+						<Button type={buttonTypes.login}> Login</Button>
+						<Harmburger onClick={() => toggleModal()} />
+					</div>
+				) : (
+					<h4>
+						Hi Chidera, <span onClick={signout}>LOG OUT</span>
+					</h4>
+				)}
 			</HeaderCTA>
 			{isModalopen && (
 				<Modal toggleModal={toggleModal}>
@@ -59,6 +72,14 @@ const HeaderContainer = styled(motion.header)`
 
 const HeaderCTA = styled.div`
 	margin-left: auto;
+	h4 {
+		color: white;
+		span {
+			text-decoration: underline;
+			margin-left: 1em;
+			cursor: pointer;
+		}
+	}
 `;
 
 export default Header;
