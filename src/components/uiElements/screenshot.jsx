@@ -16,11 +16,11 @@ const Screenshot = ({imgLink,Name}) => {
 const ScreenshotContainer = styled(motion.div)`
 	border-radius: 0.8em;
 	background-color: var(--light-grey-color);
-	border: 1px solid #ddd;
+	border: 1px solid #eee;
 	
 
 	img{
-		width: 100%;
+		height: 100%;
     max-height: 42rem;
     object-fit: fill;
     display: block;
