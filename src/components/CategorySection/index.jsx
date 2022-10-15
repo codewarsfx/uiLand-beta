@@ -72,6 +72,7 @@ const ScreenshotContainerTop = styled.div`
 
 const ScreenshotContainerBottom = styled.div`
 	display: flex;
+	gap:1rem;
 	justify-content: space-between;
 `;
 

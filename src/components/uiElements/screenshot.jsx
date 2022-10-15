@@ -14,23 +14,23 @@ const Screenshot = ({imgLink,Name}) => {
 
 
 const ScreenshotContainer = styled(motion.div)`
-	width: 48%;
 	border-radius: 0.8em;
-	height: 40vh;
 	background-color: var(--light-grey-color);
 	border: 1px solid #eee;
 	
 
 	img{
-		width: 100%;
 		height: 100%;
-		border-radius: 0.8em;
-		object-fit: fill;
+    max-height: 42rem;
+    object-fit: fill;
+    display: block;
+    border-radius: 2em;
 	}
 
 	@media (min-width: 768px) {
-		height: 65vh;
 		border-radius: 3em;
+		max-width: 50%;
+		flex: 0 0 50%;
 	}
 `;
 
