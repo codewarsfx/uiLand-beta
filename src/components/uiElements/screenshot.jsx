@@ -21,6 +21,7 @@ const ScreenshotContainer = styled(motion.div)`
 
 	img{
 		height: 100%;
+		width:100%;
     max-height: 42rem;
     object-fit: fill;
     display: block;
