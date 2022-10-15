@@ -18,13 +18,14 @@ const ScreenshotContainer = styled(motion.div)`
 	border-radius: 0.8em;
 	height: 40vh;
 	background-color: var(--light-grey-color);
-	border: 1px solid #ddd;
+	border: 1px solid #eee;
 	
 
 	img{
 		width: 100%;
 		height: 100%;
 		border-radius: 0.8em;
+		object-fit: fill;
 	}
 
 	@media (min-width: 768px) {
