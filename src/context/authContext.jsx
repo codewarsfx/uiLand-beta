@@ -18,7 +18,7 @@ export const UserContextProvider = ({ children }) => {
 		return subscribeToAuthOnMount;
 	};
 
-	useEffect(subscribeToAuthOnMount, []);
+	useEffect(subscribeToAuthOnMount, [subscribeToAuthOnMount]);
 
 	return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 };

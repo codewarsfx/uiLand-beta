@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { useEffect } from "react";
 
 const Modal = ({ children, toggleModal }) => {

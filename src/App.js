@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import ScreensTab from "./components/ScreensTab";
 import ElementsTab from "./components/ElementsTab";
 import { UserContextProvider } from "./context/authContext";
+import { ScreensContextProvider } from "./context/screensContex";
 
 function App() {
 	return (
@@ -15,8 +16,10 @@ function App() {
 				<Route
 					path='/'
 					element={
-						<UserContextProvider>
-							<Home />
+            <UserContextProvider>
+              <ScreensContextProvider>
+                 <Home />
+                </ScreensContextProvider>
 						</UserContextProvider>
 					}
 				>
@@ -52,6 +55,7 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     padding: 0;
     font-family: var(--primary-font);
+    background-color: #eee;
 }
 
 

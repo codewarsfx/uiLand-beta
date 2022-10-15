@@ -44,7 +44,7 @@ const Header = () => {
 					</div>
 				) : (
 					<h4>
-						Hi Chidera, <span onClick={signout}>LOG OUT</span>
+						Hi {user?.displayName}, <span onClick={signout}>LOG OUT</span>
 					</h4>
 				)}
 			</HeaderCTA>
