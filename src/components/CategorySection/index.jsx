@@ -42,7 +42,9 @@ const CategorySectionWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	margin: auto;
+	gap: 2em;
 	width: 90%;
 
 	:not(:first-child) {
@@ -50,16 +52,15 @@ const CategorySectionWrapper = styled.div`
 	}
 	@media (min-width: 768px) {
 		flex-direction: row;
-
 		width: 95%;
 	}
 `;
 
 const ScreenShotContainer = styled.div`
 	margin-top: 2em;
-
 	@media (min-width: 768px) {
 		width: 45%;
+		min-height: 100%;
 		margin-top: 0;
 	}
 `;

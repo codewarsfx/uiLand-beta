@@ -80,8 +80,8 @@ img{
    -webkit-tap-highlight-color: transparent !important;
  }
 
-/* 
- *{
+
+ /* *{
   border: 1px solid red;
 } */
 
