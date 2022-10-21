@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
-import Single from "./pages/single";
 import ScreensTab from "./components/ScreensTab";
 import ElementsTab from "./components/ElementsTab";
 import { UserContextProvider } from "./context/authContext";
@@ -14,8 +13,7 @@ function App() {
 			<GlobalStyle />
 
 			<Routes>
-				          <Route path='/single/:id' element={<Single />} />
-                  <Route
+				<Route
 					path='/'
 					element={
             <UserContextProvider>
@@ -25,7 +23,6 @@ function App() {
 						</UserContextProvider>
 					}
 				>
-
 					<Route index element={<ScreensTab />} />
 					<Route path='elements' element={<ElementsTab />} />
 				</Route>
@@ -83,8 +80,8 @@ img{
    -webkit-tap-highlight-color: transparent !important;
  }
 
-/* 
- *{
+
+ /* *{
   border: 1px solid red;
 } */
 
