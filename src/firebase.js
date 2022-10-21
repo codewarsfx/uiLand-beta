@@ -5,7 +5,7 @@ import {
 	signInWithPopup,
 	signOut,
 } from "firebase/auth";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs,getDoc,doc } from "firebase/firestore";
 import { prepareData } from "./utils/FirebaseUtilities";
 // import { getAnalytics } from "firebase/analytics";
 
@@ -48,3 +48,8 @@ export const getScreensData = async () => {
 };
 
 
+export const getindividualScreenData=async (id)=>{
+	const querySnapshot=  await getDoc(doc(db,"Screens",id))
+	const der = querySnapshot.data()
+	return der
+   }
