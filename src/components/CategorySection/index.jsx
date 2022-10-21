@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-
+import {Link} from "react-router-dom"
 import { ScreensContext } from "../../context/screensContex";
 import { BrandDescription, BrandLogo, Pill, Screenshot } from "../uiElements";
 import { pillsTypes } from "../uiElements/pills";
@@ -13,6 +13,7 @@ const ScreensInCategory = () => {
 			<CategorySectionWrapper>
 				{screens?.map(({ startScreens, Name, Category, logo, id }) => (
 					<ScreenShotContainer key={id}>
+							<Link  to={`/single/${id}`}>
 						<ScreenshotContainerTop>
 							<BrandLogo imageUrl={logo} />
 							<BrandDescription name={Name} category={Category} />
@@ -23,7 +24,7 @@ const ScreensInCategory = () => {
 								<Screenshot key={screenshot} imgLink={screenshot} alt={Name} />
 							))}
 						</ScreenshotContainerBottom>
-					</ScreenShotContainer>
+					</Link></ScreenShotContainer>
 				))}
 			</CategorySectionWrapper>
 		</CategorySectionContainer>
