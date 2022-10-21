@@ -33,7 +33,7 @@ getScreens();
 };
 const ElementsInCategoryContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(239px,1fr));
 	margin: 1.5em auto;
 	gap: 10px;
 	width: 90%;
