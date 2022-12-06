@@ -5,9 +5,9 @@ import {
 	signInWithPopup,
 	signOut,
 } from "firebase/auth";
-import { getFirestore, collection, getDocs,getDoc,doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs,getDoc,doc, query, where } from "firebase/firestore";
 import { prepareData } from "./utils/FirebaseUtilities";
-// import { getAnalytics } from "firebase/analytics";
+
 
 // firebase config object
 const firebaseConfig = {
@@ -52,4 +52,15 @@ export const getindividualScreenData=async (id)=>{
 	const querySnapshot=  await getDoc(doc(db,"Screens",id))
 	const der = querySnapshot.data()
 	return der
-   }
+}
+   
+// query collection by data
+
+export const getItemsByQuery = async (filterby) => {
+	const citiesRef = collection(db, "Screens");
+
+    const q = query(citiesRef, where("Category", "==", filterby));
+
+	const querySnapshot = await getDocs(q);
+    return prepareData(querySnapshot.docs)
+}
