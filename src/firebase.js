@@ -5,7 +5,7 @@ import {
 	signInWithPopup,
 	signOut,
 } from "firebase/auth";
-import { getFirestore, collection, getDocs,getDoc,doc ,setDoc, query, where,deleteDoc} from "firebase/firestore";
+import { getFirestore, collection, getDocs,getDoc,doc ,setDoc, query, where,deleteDoc,onSnapshot} from "firebase/firestore";
 import { prepareData } from "./utils/FirebaseUtilities";
 
 
@@ -79,6 +79,22 @@ export const getindividualScreenData=async (id)=>{
 	// 	// doc.data() is never undefined for query doc snapshots
 	// 	console.log(doc.id, " => ", doc.data());
 	// })
+
+
+
+	// const querySnapshots = query(collection(db, "Screens",id,"Bookmark"), where("id", "==", user));
+	// console.log(querySnapshots)
+	// const q=await getDocs(querySnapshots)
+	// console.log(q)
+	// onSnapshot(q, (querySnapshot) => { 
+	// 	let result=[]
+	// 	console.log(querySnapshot)
+	// 	querySnapshot.forEach((doc) => {
+	//  result.push(doc.id)
+	// });
+	// return result
+	// })
+
       let result=[]
 		const querySnapshot = await getDocs(collection(db, "Screens",id,"Bookmark"));
 		querySnapshot.forEach((doc) => {
