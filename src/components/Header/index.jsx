@@ -59,6 +59,7 @@ const Header = () => {
 
 const HeaderContainer = styled(motion.header)`
 	width: 90%;
+	max-width: 1200px;
 	margin: auto;
 	display: flex;
 	justify-content: center;

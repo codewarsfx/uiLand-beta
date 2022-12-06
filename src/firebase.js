@@ -7,7 +7,7 @@ import {
 } from "firebase/auth";
 import { getFirestore, collection, getDocs,getDoc,doc ,setDoc, query, where,deleteDoc} from "firebase/firestore";
 import { prepareData } from "./utils/FirebaseUtilities";
-// import { getAnalytics } from "firebase/analytics";
+
 
 // firebase config object
 const firebaseConfig = {
@@ -87,3 +87,11 @@ export const getindividualScreenData=async (id)=>{
 		return result
    }
 
+   export const getItemsByQuery = async (filterby) => {
+	const citiesRef = collection(db, "Screens");
+
+    const q = query(citiesRef, where("Category", "==", filterby));
+
+	const querySnapshot = await getDocs(q);
+    return prepareData(querySnapshot.docs)
+}

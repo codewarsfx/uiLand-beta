@@ -11,21 +11,21 @@ import "./footer.css";
 const Footer = () => {
 	return (
 		<footer>
-			<div class='wrapper footer-wrapper'>
-				<div class='logo'>
+			<div className='wrapper footer-wrapper'>
+				<div className='logo'>
 					<div>
 						<img src='assets/img/UL.png' alt='' />
 					</div>
-					<section class='footer-icons'>
-                            <FiFacebook class='footer-icon'/>
-						    <AiOutlineYoutube class='footer-icon' />
-						    <CiTwitter class='footer-icon'/>
-                            <AiOutlineInstagram class='footer-icon'/>
+					<section className='footer-icons'>
+                            <FiFacebook className='footer-icon'/>
+						    <AiOutlineYoutube className='footer-icon' />
+						    <CiTwitter className='footer-icon'/>
+                            <AiOutlineInstagram className='footer-icon'/>
 					</section>
 				</div>
 
-				<section class='footer-links'>
-					<ul class='link-items'>
+				<section className='footer-links'>
+					<ul className='link-items'>
 						<li>
 							<a href='#'>Home</a>
 						</li>
@@ -39,7 +39,7 @@ const Footer = () => {
 							<a href='#'>About Us</a>
 						</li>
 					</ul>
-					<ul class='link-items'>
+					<ul className='link-items'>
 						<li>
 							<a href='#'>Careers</a>
 						</li>
@@ -52,12 +52,12 @@ const Footer = () => {
 					</ul>
 				</section>
 
-				<section class='form'>
+				<section className='form'>
 					<form action='#'>
-						<div class='form-input'>
+						<div className='form-input'>
 							<input
 								type='text'
-								class='form-input-control'
+								className='form-input-control'
 								placeholder='Updates in your inbox...'
 							/>
 							<button type='submit'>Go</button>

@@ -26,12 +26,13 @@ const ScreenshotContainer = styled(motion.div)`
 
 	@media (min-width: 768px) {
 		border-radius: 2em;
-		height: auto;
+		height: 40vmax;
 		img{
 			border-radius: 2em;
 		}
 
 	}
 `;
+
 
 export default Screenshot;
