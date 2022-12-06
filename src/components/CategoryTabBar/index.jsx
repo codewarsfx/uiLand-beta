@@ -1,30 +1,48 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
 import styled from "styled-components";
+import { ScreensContext } from "../../context/screensContex";
 
 import { Pill } from "../uiElements";
 import { pillsTypes } from "../uiElements/pills";
 
+const removeAllActiveClasses = () => {
+	const nodes = document.querySelectorAll('.pills')
+		Array.from(nodes).forEach( node=> node.classList.remove('active'))
+	
+}
+
+
+
 const CategoryTabBar = () => {
-	// const categories = [];
+	const { setFilterItem } = useContext(ScreensContext);
+
+	const onClickPill = (e) => {
+		removeAllActiveClasses();
+		e.target.classList.add('active');
+		const filterby = e.target.name
+		setFilterItem(filterby)
+	};
 
 	return (
 		<CategoryTabContainer>
 			<CategoryTabWrapper>
-				{
+				{<>
 					<Pill type={pillsTypes.category}>
-						<NavLink
-							to='/'
-							className='pills'
-							style={({ isActive }) => {
-								return {
-									backgroundColor: isActive ? "var(--light-grey-color)" : "",
-								};
-							}}
-							end
-						>
-							FINTECH
-						</NavLink>
+						<button className='pills active' onClick={onClickPill} name=''>
+							ALL
+						</button>
 					</Pill>
+					<Pill type={pillsTypes.category}>
+						<button className='pills' onClick={onClickPill} name='FINTECH'>
+							FINTECH
+						</button>
+					</Pill>
+						<Pill type={pillsTypes.category}>
+						<button className='pills' onClick={onClickPill} name='EDTECH'>
+							EDTECH
+						</button>
+					</Pill>
+					</>
 				}
 			</CategoryTabWrapper>
 		</CategoryTabContainer>

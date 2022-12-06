@@ -6,12 +6,12 @@ import { BrandDescription, BrandLogo, Pill, Screenshot } from "../uiElements";
 import { pillsTypes } from "../uiElements/pills";
 
 const ScreensInCategory = () => {
-	const screens = useContext(ScreensContext);
+	const {screens,isLoading} = useContext(ScreensContext);
 
 	return (
 		<CategorySectionContainer>
 			<CategorySectionWrapper>
-				{screens?.map(({ startScreens, Name, Category, logo, id }) => (
+		{screens?.map(({ startScreens, Name, Category, logo, id }) => (
 					<ScreenShotContainer key={id}>
 							<Link  to={`/single/${id}`}>
 						<ScreenshotContainerTop>
@@ -47,7 +47,7 @@ const CategorySectionWrapper = styled.div`
 	margin: auto;
 	gap: 2em;
 	width: 90%;
-
+	max-width: 1250px;
 	:not(:first-child) {
 		margin-top: 4em;
 	}

@@ -20,6 +20,7 @@ const BrandLogoCotainer = styled.div`
 	@media (min-width: 768px) {
 		width: 45px;
 		height: 45px;
+		border: 1px solid #ddd;
 
 	}
 `;

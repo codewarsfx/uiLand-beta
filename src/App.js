@@ -74,6 +74,14 @@ a{
 .pills{
   padding:0.4em 0.9em;
   border-radius: 5em;
+  border: none;
+  cursor: pointer;
+
+}
+
+.active{
+  background-color: #444;
+  color: white;
 }
 
 img{
