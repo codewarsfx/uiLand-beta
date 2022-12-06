@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
 import Single from "./pages/single";
+import Profile from "./pages/profile";
 import ScreensTab from "./components/ScreensTab";
 import ElementsTab from "./components/ElementsTab";
 import { UserContextProvider } from "./context/authContext";
@@ -14,7 +15,15 @@ function App() {
 			<GlobalStyle />
 
 			<Routes>
-				          <Route path='/single/:id' element={<Single />} />
+				          <Route path='/single/:id' element={    
+                  <UserContextProvider>
+              <ScreensContextProvider><Single />     
+                </ScreensContextProvider>
+						</UserContextProvider>} />
+                  <Route path='/profile' element={  
+                  
+                <Profile />  
+       } />
                   <Route
 					path='/'
 					element={

@@ -5,7 +5,7 @@ import {
 	signInWithPopup,
 	signOut,
 } from "firebase/auth";
-import { getFirestore, collection, getDocs,getDoc,doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs,getDoc,doc ,setDoc, query, where,deleteDoc} from "firebase/firestore";
 import { prepareData } from "./utils/FirebaseUtilities";
 // import { getAnalytics } from "firebase/analytics";
 
@@ -50,6 +50,40 @@ export const getScreensData = async () => {
 
 export const getindividualScreenData=async (id)=>{
 	const querySnapshot=  await getDoc(doc(db,"Screens",id))
-	const der = querySnapshot.data()
-	return der
+	const result = querySnapshot.data()
+	return result
    }
+
+   
+   export const addBookMark=async(user,  id)=>{
+    await setDoc(doc(db, "Screens",id, "Bookmark",user), {
+		id: user
+	  });
+
+   }
+
+   export const deleteBookMark=async(user,  id)=>{
+  await deleteDoc(doc(db, "Screens",id, "Bookmark",user), {
+		id: user
+	  });
+	 
+   }
+
+   export const queryBookMarks = async(user,id)=>{
+	// const q = query(collection(db, "Screens",id, "Bookmark"), where("id", "==", user));
+	// console.log(q)
+	// const querySnapshot = await getDocs(q);
+	// console.log(querySnapshot)
+	
+	// querySnapshot.forEach((doc) => {
+	// 	// doc.data() is never undefined for query doc snapshots
+	// 	console.log(doc.id, " => ", doc.data());
+	// })
+      let result=[]
+		const querySnapshot = await getDocs(collection(db, "Screens",id,"Bookmark"));
+		querySnapshot.forEach((doc) => {
+		 result.push(doc.id)
+		});
+		return result
+   }
+

@@ -10,7 +10,7 @@ import {
 import useModal from "../../hooks/useModal";
 import Login from "../Login/login";
 import Modal from "../modal";
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import { UserContext } from "../../context/authContext";
 import { signout } from "../../firebase";
 
