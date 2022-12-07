@@ -2,7 +2,7 @@ import styled from "styled-components";
 const BrandLogoBig = ({ imageUrl }) => {
 	return (
 		<BrandLogoCotainer>
-        	<img src={imageUrl}  alt='brandlogo' />
+        	<img src={imageUrl}  alt='brandlogo' referrerpolicy="no-referrer" />
 		</BrandLogoCotainer>
 	);
 };
