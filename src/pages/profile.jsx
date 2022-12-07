@@ -6,9 +6,6 @@ import { UserContext } from "../../src/context/authContext";
 
 export default function Profile() {
   const user = useContext(UserContext);
-   useEffect(()=>{
-    console.log(user)
-   },[])
 
   return (
     <>
