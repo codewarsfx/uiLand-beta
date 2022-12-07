@@ -15,26 +15,31 @@ function App() {
 			<GlobalStyle />
 
 			<Routes>
-				          <Route path='/single/:id' element={    
-                  <UserContextProvider>
-              <ScreensContextProvider><Single />     
-                </ScreensContextProvider>
-						</UserContextProvider>} />
-                  <Route path='/profile' element={  
-                  
-                <Profile />  
-       } />
-                  <Route
+				<Route
+					path='/single/:id'
+					element={
+						<UserContextProvider>
+							<ScreensContextProvider>
+								<Single />
+							</ScreensContextProvider>
+						</UserContextProvider>
+					}
+        />
+        
+        <Route path='/profile' element={
+          	<UserContextProvider>
+            <Profile />
+            </UserContextProvider>} />
+				<Route
 					path='/'
 					element={
-            <UserContextProvider>
-              <ScreensContextProvider>
-                 <Home />
-                </ScreensContextProvider>
+						<UserContextProvider>
+							<ScreensContextProvider>
+								<Home />
+							</ScreensContextProvider>
 						</UserContextProvider>
 					}
 				>
-
 					<Route index element={<ScreensTab />} />
 					<Route path='elements' element={<ElementsTab />} />
 				</Route>

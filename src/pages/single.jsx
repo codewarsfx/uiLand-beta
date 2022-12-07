@@ -19,7 +19,7 @@ const Single = () => {
          setScreenResult(screens)
         }   
   }
-getScreens();
+getScreens()
   },[])
 
  useEffect(()=>{
